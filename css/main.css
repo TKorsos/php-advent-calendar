@@ -35,7 +35,6 @@ html, body {
     align-items: center;
     text-align: center;
     font-size: 2rem;
-    padding: .5rem;
     /* pantone 485c */
     border: 6px solid #da291c;
     border-radius: 1rem;
@@ -54,12 +53,19 @@ html, body {
 .front {
     /* pantone 485c */
     background-color: #da291c;
+    background-image: url("../img/toa-heftiba-sweet-pastries-on-black-ceramic-plate-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* pantone cool gray 1 */
+    color: #e2e2e2;
 }
 
 .back {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 1rem .5rem;
     /* pantone 871c */
     background-color: #84754e;
     transform: rotateY(180deg);
@@ -75,4 +81,15 @@ html, body {
 
 q {
     font-style: italic;
+}
+
+.date {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: .6rem;
 }
