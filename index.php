@@ -65,7 +65,7 @@
         echo '<main class="container">';
         for($i = 1; $i <= 24; $i++) {
             echo '<section class="card">';
-            echo '<article class="card_content front '.flipClass($i, $today, "card_front", "old_front").'">December '.$i.'.</article>';
+            echo '<article class="card_content front '.flipClass($i, $today, "card_front", "old_front").'"><span class="date">December '.$i.'.</span></article>';
             echo quote($i, $today, $idezet);
             echo '</section>';
         }
