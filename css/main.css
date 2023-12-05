@@ -6,7 +6,8 @@ html, body {
     margin: 0;
     padding: 0;
     /* pantone 3425c */
-    background-color: #006341;
+    background: #006341 url("../img/morgane-le-breton-green-christmas-tree-with-string-lights-unsplash.jpg") no-repeat fixed center;
+    background-size: cover;
     font-family: cursive;
 }
 
@@ -24,6 +25,8 @@ html, body {
     width: 300px;
     height: 400px;
     position: relative;
+    cursor: pointer;
+    user-select: none;
 }
 
 .card_content {
@@ -51,13 +54,14 @@ html, body {
 }
 
 .front {
+    /* pantone 3425c */
+    /* background-color: #006341; */
     /* pantone 485c */
-    background-color: #da291c;
-    background-image: url("../img/toa-heftiba-sweet-pastries-on-black-ceramic-plate-unsplash.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #da291c url("../img/toa-heftiba-sweet-pastries-on-black-ceramic-plate-unsplash.jpg") no-repeat center;
     background-size: cover;
     /* pantone cool gray 1 */
+    /* background-blend-mode: color-burn; */
+    background-blend-mode: luminosity;
     color: #e2e2e2;
 }
 
@@ -92,4 +96,16 @@ q {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: .6rem;
+}
+
+.form {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-num {
+    padding-left: .5rem;
 }
