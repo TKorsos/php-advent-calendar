@@ -18,17 +18,10 @@
     <?php
     // a tényleges mai nap, tesztnél beírható egy szám amivel ellenőrizhetem
     $date = date("j");
-    $num = 1;
+    $num = 25;
     $today = $date;
-    
-    // 24 idézet
-    // https://www.citatum.hu/kategoria/Lelek/3
-    $idezet = [
-        ["quote" => "A szem mindent megmutat, még a lélek legapróbb titkait is.", "author" => "Julia RedHood"],
-        ["quote" => "A lelki sebek belül hagynak nyomot, olyan tintával, amely kitörölhetetlen.", "author" => "Charles Martin"],
-        ["quote" => "Nem elég, ha az ember csak kenyérrel él, valaminek a lelkét is táplálnia kell.", "author" => "William Shatner"],
-        ["quote" => "A szív a lélek mutatója.", "author" => "Hioszi Tatiosz"],
-    ];
+    // idézetek helye
+    include("./data/quotes.php");
 
     /*
     function randomIndex($idezet) {
@@ -55,7 +48,6 @@
     }
 
     function quote($i, $today, $idezet) {
-        $q = "xyz idézet";
         if($i <= $today) {
             return '<article class="card_content back '.flipClass($i, $today, "card_back", "old_back").'"><div><q>'.$idezet[$i - 1]["quote"].'</q></div><div>'.$idezet[$i - 1]["author"].'</div></article>';
         }
@@ -65,16 +57,17 @@
         echo '<main class="container">';
         for($i = 1; $i <= 24; $i++) {
             echo '<section class="card">';
-            echo '<article class="card_content front '.flipClass($i, $today, "card_front", "old_front").'"><span class="date">December '.$i.'.</span></article>';
+            echo '<article class="card_content front '.flipClass($i, $today, "card_front", "old_front").'"><div class="date">December<span class="date-num js-date-num">'. $i .'</span>.</div></article>';
             echo quote($i, $today, $idezet);
             echo '</section>';
         }
-        echo '</main>';
+        echo '<section class="form"><article><button class="js-close-all">Teszt</button></article></section></main>';
     }
 
     render($today, $idezet);
     
     ?>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
