@@ -1,8 +1,8 @@
 let closeAllBtn = document.querySelector(".js-close-all");
-let frontMessage = document.querySelectorAll(".card");
-let card = document.querySelectorAll(".card_content");
-let front = document.querySelectorAll(".front");
-let back = document.querySelectorAll(".back");
+let frontMessage = document.querySelectorAll(".js-card");
+let card = document.querySelectorAll(".js-card-content");
+let front = document.querySelectorAll(".js-front");
+let back = document.querySelectorAll(".js-back");
 let dateNum = document.querySelectorAll(".js-date-num");
 // teszthez num, valós date
 let num = 25;
@@ -12,13 +12,11 @@ let today = date;
 let dateBeforeNums = [];
 let dateAfterNums = [];
 
-// ma és a nap ellenőrzése
+// ma és az ablakhoz tartozó nap ellenőrzése
 function dateToToday() {
     for( let i = 0; i < dateNum.length; i++) {
-        // dateBeforeNums.push(dateNum[i].innerText);
         let day = dateNum[i].innerText;
         if(day < today) {
-            //console.log(day);
             dateBeforeNums.push(day);
         }
 
@@ -26,26 +24,25 @@ function dateToToday() {
             dateAfterNums.push(day);
         }
     }
-    // return dateBeforeNums;
 }
-
 
 // ki be kapcsolja az osztályt amivel lehet nyitogatni az ablakokat
 function newFlipClass() {
     dateToToday();
 
+    // elmúlt napok ablakaira vonatkozik - ki/be nyitható/csukható
     dateBeforeNums.forEach(element => {
         front[element - 1].addEventListener("click", () => {
-            front[element - 1].classList.toggle("old_front");
-            back[element - 1].classList.toggle("old_back");
+            front[element - 1].classList.toggle("js-old-front");
+            back[element - 1].classList.toggle("js-old-back");
         })
         back[element - 1].addEventListener("click", () => {
-            front[element - 1].classList.toggle("old_front");
-            back[element - 1].classList.toggle("old_back");
+            front[element - 1].classList.toggle("js-old-front");
+            back[element - 1].classList.toggle("js-old-back");
         })
     })
 
-    //
+    // az elkövetkezendő napokra vonatkozik - hány nap van hátra még
     dateAfterNums.forEach(element => {
         frontMessage[element - 1].addEventListener("click", () => {
             alert("Még " + (element - today) + " nap van hátra!");
@@ -56,11 +53,11 @@ function newFlipClass() {
 // bezárja az összes nyitott ablakot
 function closeAllCard() {
     for( let c of card) {
-        if(c.classList.contains("old_front")) {
-            c.classList.remove("old_front");
+        if(c.classList.contains("js-old-front")) {
+            c.classList.remove("js-old-front");
         }
-        if(c.classList.contains("old_back")) {
-            c.classList.remove("old_back");
+        if(c.classList.contains("js-old-back")) {
+            c.classList.remove("js-old-back");
         }
     }
 }

@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<!-- 
-
- - kattintásra be lehessen csukni az összeset egyszerre és külön külön is
-
--->
-
 <body>
     <?php
     // a tényleges mai nap, tesztnél beírható egy szám amivel ellenőrizhetem
@@ -49,15 +43,15 @@
 
     function quote($i, $today, $idezet) {
         if($i <= $today) {
-            return '<article class="card_content back '.flipClass($i, $today, "card_back", "old_back").'"><div><q>'.$idezet[$i - 1]["quote"].'</q></div><div>'.$idezet[$i - 1]["author"].'</div></article>';
+            return '<article class="card-content back js-card-content js-back '.flipClass($i, $today, "card-back", "js-old-back").'"><div><q>'.$idezet[$i - 1]["quote"].'</q></div><div>'.$idezet[$i - 1]["author"].'</div></article>';
         }
     }
 
     function render($today, $idezet) {
         echo '<main class="container">';
         for($i = 1; $i <= 24; $i++) {
-            echo '<section class="card">';
-            echo '<article class="card_content front '.flipClass($i, $today, "card_front", "old_front").'"><div class="date">December<span class="date-num js-date-num">'. $i .'</span>.</div></article>';
+            echo '<section class="card js-card">';
+            echo '<article class="card-content front js-card-content js-front '.flipClass($i, $today, "card-front", "js-old-front").'"><div class="date">December<span class="date-num js-date-num">'. $i .'</span>.</div></article>';
             echo quote($i, $today, $idezet);
             echo '</section>';
         }
