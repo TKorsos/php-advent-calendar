@@ -39,7 +39,7 @@ html, body {
     text-align: center;
     font-size: 2rem;
     /* pantone 485c */
-    border: 6px solid #da291c;
+    border: .38rem solid #da291c;
     border-radius: 1rem;
     backface-visibility: hidden;
     transition: all 1s ease;
@@ -72,14 +72,6 @@ html, body {
     transform: rotateY(180deg);
 }
 
-.js-old-front {
-    transform: rotateY(180deg);
-}
-
-.js-old-back {
-    transform: rotateY(0deg);
-}
-
 q {
     font-style: italic;
 }
@@ -95,14 +87,45 @@ q {
     border-radius: .6rem;
 }
 
-.form {
+.row {
     width: 100%;
     padding: 2rem;
+}
+
+.col {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.close-all {
+    padding: 1rem 2rem;
+    background-color: rgba(218, 41, 28, .3);
+    border: .38rem solid #da291c;
+    border-radius: .6rem;
+    font-size: 2rem;
+    color: #e2e2e2;
+    cursor: pointer;
+    transition: background-color ease-in .4s, transform linear 1s;
+}
+
+.close-all:hover {
+    background-color: rgba(218, 41, 28, .6);
+}
+
+.close-all:active {
+    transform: scale(.9);
+}
+
 .date-num {
     padding-left: .5rem;
+}
+
+.js-old-front {
+    transform: rotateY(180deg);
+}
+
+.js-old-back {
+    transform: rotateY(0deg);
 }

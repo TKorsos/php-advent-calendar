@@ -55,7 +55,7 @@
             echo quote($i, $today, $idezet);
             echo '</section>';
         }
-        echo '<section class="form"><article><button class="js-close-all">Teszt</button></article></section></main>';
+        echo '<section class="row"><article class="col"><button class="close-all js-close-all">Összes ablak bezárása!</button></article></section></main>';
     }
 
     render($today, $idezet);
